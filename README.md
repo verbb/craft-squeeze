@@ -1,32 +1,22 @@
-# Squeeze plugin for Craft CMS 3.x
+<p align="center"><img src="https://verbb.imgix.net/plugins/squeeze/squeeze-icon.svg" width="100" height="100" alt="Squeeze icon"></p>
+<h1 align="center">Squeeze for Craft CMS</h1>
 
-Zip one or multiple craft assets on the fly for frontend user to download.
+Squeeze is a Craft CMS plugin zip one or multiple craft assets on the fly for frontend user to download.
 
-## Requirements
+## Documentation
+Visit the [Squeeze Plugin page](https://verbb.io/craft-plugins/squeeze) for all documentation, guides, pricing and developer resources.
 
-This plugin requires Craft CMS 3.0.0-RC11 or later.
+## Credit & Thanks
+Originally created by [Olivier Bon](https://github.com/olivierbon) and [Bob Olde Hampsink](https://github.com/boboldehampsink).
 
-## Installation
+## Support
+Get in touch with us via the [Squeeze Support page](https://verbb.io/craft-plugins/squeeze/support) or by [creating a Github issue](https://github.com/verbb/squeeze/issues)
 
-Go to the Plugin Store in your project’s Control Panel and search for “Squeeze”. Then click on the “Install” button in its modal window.
+## Sponsor
+Squeeze is licensed under the MIT license, meaning it will always be free and open source – we love free stuff! If you'd like to show your support to the plugin regardless, [Sponsor](https://github.com/sponsors/verbb) development.
 
-## Usage
+<h2></h2>
 
-```html
-<form method="post" target="_blank">
-    {{ csrfInput() }}
-    {{ actionInput('squeeze/download') }}
-    <input type="hidden" name="archivename" value="archive">
-    <input type="checkbox" name="files[]" value="10"><!-- asset id -->
-    <input type="checkbox" name="files[]" value="20"><!-- asset id -->
-    <input type="submit" value="Download!">
-</form>
-```
-To trigger download via url you can use:
-```
-/actions/squeeze/download?archivename=archive&files[]=10&files[]=20
-```
-## Credits
-
-Icon by Yazmin Alanis from the Noun Project
-This plugin is mostly a port of [Bob's](https://github.com/boboldehampsink/zipassets)
+<a href="https://verbb.io" target="_blank">
+    <img width="101" height="33" src="https://verbb.io/assets/img/verbb-pill.svg" alt="Verbb">
+</a>

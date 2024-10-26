@@ -1,52 +1,34 @@
 <?php
+namespace verbb\squeeze\controllers;
 
-namespace olivierbon\squeeze\controllers;
+use verbb\squeeze\Squeeze;
 
 use Craft;
-use craft\web\Controller;
-use olivierbon\squeeze\Squeeze;
 use craft\helpers\FileHelper;
+use craft\web\Controller;
 
-/**
- * DownloadController Class 
- *
- * @author    Olivier Bon
- * @package   Squeeze
- * @since     1.0.0
- *
- */
+use yii\web\Response;
+
 class DownloadController extends Controller
 {
-
     // Properties
     // =========================================================================
-    /**
-     * @inheritdoc
-     */
-    public $allowAnonymous = true;
+
+    protected array|int|bool $allowAnonymous = true;
+
 
     // Public Methods
     // =========================================================================
-    /**
-     * Trigers when a user wants to download a zip archive.
-     *
-     * @return Response|null
-     */
-    public function actionIndex()
+
+    public function actionIndex(): Response
     {
-        $request = Craft::$app->getRequest();
-        // Get the files to zip
-        $files = $request->getRequiredParam('files'); // array
-        // Get the filename
-        $filename = $request->getRequiredParam('archivename'); //string
-        // Create the archive
-        $archive = Squeeze::getInstance()
-            ->squeeze
-            ->archive($filename, $files);
-        // Push the download
-        $response = Craft::$app->getResponse()
-            ->sendFile($archive, null, ['forceDownload' => true]);
-        // Delete the temps file
+        $files = $this->request->getRequiredParam('files');
+        $filename = $this->request->getRequiredParam('archivename');
+        
+        $archive = Squeeze::$plugin->getService()->archive($filename, $files);
+
+        $response = Craft::$app->getResponse()->sendFile($archive, null, ['forceDownload' => true]);
+
         FileHelper::unlink($archive);
 
         return $response;

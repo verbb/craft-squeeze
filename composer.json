@@ -1,41 +1,47 @@
 {
-    "name": "olivierbon/craft-squeeze",
+    "name": "verbb/squeeze",
     "description": "Zip one or multiple craft assets on the fly for frontend user to download.",
     "type": "craft-plugin",
-    "version": "1.1.2",
+    "version": "2.0.0",
     "keywords": [
         "craft",
         "cms",
         "craftcms",
         "craft-plugin",
-        "squeeze",
-        "zip",
-        "assets"
+        "squeeze"
     ],
     "support": {
-        "docs": "https://github.com/olivierbon/craft-squeeze",
-        "issues": "https://github.com/olivierbon/craft-squeeze"
+        "email": "support@verbb.io",
+        "issues": "https://github.com/verbb/squeeze/issues?state=open",
+        "source": "https://github.com/verbb/squeeze",
+        "docs": "https://github.com/verbb/squeeze",
+        "rss": "https://github.com/verbb/squeeze/commits/v2.atom"
     },
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
+            "name": "Verbb",
+            "homepage": "https://verbb.io"
+        },
+        {
             "name": "Olivier Bon",
-            "homepage": "http://olivierbon.com",
-            "email": "help@olivierbon.com"
+            "homepage": "http://olivierbon.com"
         }
     ],
     "require": {
-        "php": ">=7.0.0",
-        "craftcms/cms": "^3.0.0-RC1"
+        "php": "^8.0.2",
+        "craftcms/cms": "^4.0.0",
+        "verbb/base": "^2.0.0"
     },
     "autoload": {
         "psr-4": {
-          "olivierbon\\squeeze\\": "src/"
+            "verbb\\squeeze\\": "src/"
         }
     },
     "extra": {
         "name": "Squeeze",
         "handle": "squeeze",
-        "class": "olivierbon\\squeeze\\Squeeze"
+        "changelogUrl": "https://raw.githubusercontent.com/verbb/squeeze/craft-4/CHANGELOG.md",
+        "class": "verbb\\squeeze\\Squeeze"
     }
 }

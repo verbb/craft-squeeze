@@ -1,23 +1,35 @@
 <?php
+namespace verbb\squeeze;
 
-namespace olivierbon\squeeze;
+use verbb\squeeze\base\PluginTrait;
 
-/**
- * Squeeze Class 
- *
- * @author    Olivier Bon
- * @package   Squeeze
- * @since     1.0.0
- *
- */
-class Squeeze extends \craft\base\Plugin
+use Craft;
+use craft\base\Plugin;
+
+class Squeeze extends Plugin
 {
-    public function init()
+    // Properties
+    // =========================================================================
+
+    public string $schemaVersion = '1.0.0';
+
+
+    // Traits
+    // =========================================================================
+
+    use PluginTrait;
+
+
+    // Public Methods
+    // =========================================================================
+
+    public function init(): void
     {
         parent::init();
 
-        $this->setComponents([
-            'squeeze' => \olivierbon\squeeze\services\SqueezeService::class,
-        ]);
+        self::$plugin = $this;
+
+        $this->_setPluginComponents();
+        $this->_setLogging();
     }
 }
