@@ -11,8 +11,6 @@ use craft\helpers\FileHelper;
 use Exception;
 use ZipArchive;
 
-use yii\base\Component;
-
 class Service extends Component
 {
     // Public Methods
