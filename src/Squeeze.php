@@ -28,8 +28,5 @@ class Squeeze extends Plugin
         parent::init();
 
         self::$plugin = $this;
-
-        $this->_setPluginComponents();
-        $this->_setLogging();
     }
 }
